@@ -28,17 +28,7 @@ The input file has to be a single file with sequences in fasta format ( starting
 GATGAPGIAGAPGFPGARGPSGPQGPSGAPGPKGVQGPPGPQGPRGLTGPIGPPGPAGAPGDKGEAGPSGPPGPTGARGS
 AGPPGATGFPGAAGRGETGPAGPAGPPGPAGAR)
 
-For the edition of the file the treshold for the not aligned positions in alignment file obtained from MUSCLE is set to 2, however it can be changed here:
-```javascript 
-not_aligned_positions = []
-        for i in range(len(seq)):
-            counter = 0
-            for name, sequence in fasta_dict.items():
-                if '-' in sequence[i]:
-                    counter += 1
-
-            if counter > 2:
-                not_aligned_positions.append(i)
+For the edition of the file the treshold for the not aligned positions in alignment file obtained from MUSCLE is set to 2, however it can be changed in the arguments - cutoff_value. 
                 
                 
 
