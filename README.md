@@ -28,7 +28,7 @@ The input file has to be a single file with sequences in fasta format ( starting
 GATGAPGIAGAPGFPGARGPSGPQGPSGAPGPKGVQGPPGPQGPRGLTGPIGPPGPAGAPGDKGEAGPSGPPGPTGARGS
 AGPPGATGFPGAAGRGETGPAGPAGPPGPAGAR)
 
-The treshold for the not aligned positions is set to 2, however it can be changed here :
+For the edition of the file the treshold for the not aligned positions in alignment file obtained from MUSCLE is set to 2, however it can be changed here:
 ```javascript 
 not_aligned_positions = []
         for i in range(len(seq)):
