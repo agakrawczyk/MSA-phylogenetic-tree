@@ -17,7 +17,7 @@ To use it some tools need to be instaled:
 
 Git can be used to get the copy of the code and example:
 
-[https://github.com/agakrawczyk/MSA-phylogenetic-tree.git]
+https://github.com/agakrawczyk/MSA-phylogenetic-tree.git
 
 ### How to run 
 The exe files of both MUSCLE and Fast Tree should be in the same repository. 
