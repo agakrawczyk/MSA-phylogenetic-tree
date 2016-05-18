@@ -81,7 +81,7 @@ class GetTree(object):
     def run_fasttree(self):
 
         """
-        Runs Fast Tree program using the edited alignment file and creates a phylogenic tree
+        Runs Fast Tree program using the edited alignment file and creates a phylogenetic tree
         from the edited alignment file.
 
         """
@@ -93,7 +93,7 @@ class GetTree(object):
     def draw_tree(self):
 
         """
-        Draws the phylogenic tree from the tree file in 'newick' format.
+        Draws the phylogenetic tree from the tree file in 'newick' format.
         """
         tree = Phylo.read(self.tree_file, 'newick')
 
@@ -107,10 +107,12 @@ if __name__ == "__main__":
     parser.add_argument('infile', help='File in sequences in fasta format for alignment')
     parser.add_argument('outfile',  help='Muscle output file, alignment in fasta format')
     parser.add_argument('edited_file',  help='Alignment file after editing')
-    parser.add_argument('tree_file',  help='Fast Tree output file, used to generate the phylogenic tree')
+    parser.add_argument('tree_file',  help='Fast Tree output file, used to generate the phylogenetic tree')
 
-    parser.add_argument('--muscle_exe', default="muscle3.8.31_i86win32.exe", help='Muscle file to run the program ')
-    parser.add_argument('--fast_tree_exe', default="FastTree.exe", help='Fast Tree file to run the program')
+    parser.add_argument('--muscle_exe', default="external/muscle3.8.31_i86win32.exe",
+                        help='Muscle file to run the program ')
+    parser.add_argument('--fast_tree_exe', default="external/FastTree.exe",
+                        help='Fast Tree file to run the program')
 
     args = parser.parse_args()
 
@@ -120,5 +122,3 @@ if __name__ == "__main__":
     param.edit_alignment()
     param.run_fasttree()
     param.draw_tree()
-
-
