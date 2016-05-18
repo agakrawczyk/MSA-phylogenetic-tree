@@ -7,7 +7,6 @@ import argparse
 class GetTree(object):
 
     def __init__(self, muscle_exe, infile, outfile, fast_tree_exe, edited_file, tree_file):
-
         """
         Constructor run with path to ini file with settings.
         :param muscle_exe: MUSCLE exe file
@@ -16,8 +15,7 @@ class GetTree(object):
         :param fast_tree_exe: the exe file of Fast Tree program
         :param edited_file: alignment file after editing
         :return tree_file : phylogenetic tree file in 'newick' format
-
-        """
+         """
 
         self.muscle_exe = muscle_exe
         self.infile = infile
@@ -29,16 +27,14 @@ class GetTree(object):
     def run_muscle(self):
         """
         Runs MUSCLE program that aligns the sequences given in the single file in the fasta format.
-
         """
 
         subprocess.call([self.muscle_exe, "-in", self.infile, "-out", self.outfile])
 
-    def edit_alignment(self):
-
+    def edit_alignment(self, cutoff_value):
         """
         Edits the alignment file to get rid of too many not aligned positions.
-
+        :param cutoff_value: the maximum value of the lines without alignment
         """
 
         fasta_dict = {}
@@ -67,7 +63,7 @@ class GetTree(object):
                 if '-' in sequence[i]:
                     counter += 1
 
-            if counter > 2:
+            if counter > cutoff_value:
                 not_aligned_positions.append(i)
 
         with open(self.edited_file, 'w') as f:
@@ -79,11 +75,9 @@ class GetTree(object):
                 print('>' + name, edited_seq, sep='\n', file=f)
 
     def run_fasttree(self):
-
         """
         Runs Fast Tree program using the edited alignment file and creates a phylogenetic tree
         from the edited alignment file.
-
         """
 
         with open(self.tree_file, "w") as f:
@@ -91,7 +85,6 @@ class GetTree(object):
             print(fasttree_output, file=f)
 
     def draw_tree(self):
-
         """
         Draws the phylogenetic tree from the tree file in 'newick' format.
         """
@@ -113,12 +106,14 @@ if __name__ == "__main__":
                         help='Muscle file to run the program ')
     parser.add_argument('--fast_tree_exe', default="external/FastTree.exe",
                         help='Fast Tree file to run the program')
+    parser.add_argument('--cutoff_value', default=2, type=int,
+                        help='It is the maximum value of the lines without alignment, have to int')
 
     args = parser.parse_args()
 
     param = GetTree(args.muscle_exe, args.infile, args.outfile, args.fast_tree_exe, args.edited_file, args.tree_file)
 
     param.run_muscle()
-    param.edit_alignment()
+    param.edit_alignment(args.cutoff_value)
     param.run_fasttree()
     param.draw_tree()
