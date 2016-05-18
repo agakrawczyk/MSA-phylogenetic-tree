@@ -1,5 +1,5 @@
 # MSA-phylogenic-tree
-
+Small pipeline for alignment and drawing the phylogenic tree from the file containging sequnces in fasta. 
 ### Requirements 
 To use it some tools need to be instaled:
 
