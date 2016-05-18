@@ -1,6 +1,6 @@
-# MSA-phylogenetic-tree
+## MSA-phylogenetic-tree
 It is a small pipeline for alignment and drawing the phylogenetic tree from the file containging sequnces in fasta format.  
-### Requirements 
+####Requirements 
 To use it some tools need to be instaled:
 
 -[Biopython](http://biopython.org/wiki/Biopython)
@@ -13,13 +13,13 @@ To use it some tools need to be instaled:
 
 -[Python 3.5.1.](https://docs.python.org/3/) 
 
-### Instalation 
+##### Instalation 
 
 Git can be used to get the copy of the code and example:
 
 https://github.com/agakrawczyk/MSA-phylogenetic-tree.git
 
-### How to run 
+#####How to run 
 The exe files of both MUSCLE and Fast Tree should be in the same repository. 
 
 The input file has to be a single file with sequences in fasta format ( starting with ">"). 
