@@ -15,7 +15,7 @@ class GetTree(object):
         :param outfile: file with aligned sequences (MUSCLE output)
         :param fast_tree_exe: the exe file of Fast Tree program
         :param edited_file: alignment file after editing
-        :return tree_file : phylogenic tree file in 'newick' format
+        :return tree_file : phylogenetic tree file in 'newick' format
 
         """
 
