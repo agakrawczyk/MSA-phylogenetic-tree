@@ -13,6 +13,12 @@ To use it some tools need to be instaled:
 
 -[Python 3.5.1.](https://docs.python.org/3/) 
 
+### Instalation 
+
+Git can be used to get the copy of the code and example:
+
+[https://github.com/agakrawczyk/MSA-phylogenetic-tree.git]
+
 ### How to run 
 The exe files of both MUSCLE and Fast Tree should be in the same repository. 
 
