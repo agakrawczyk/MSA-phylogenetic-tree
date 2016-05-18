@@ -1,7 +1,7 @@
 # MSA-phylogenic-tree
 
 ### Requirements 
-To use it some tools need to ne instaled:
+To use it some tools need to be instaled:
 
 -[Biopython](http://biopython.org/wiki/Biopython)
 
